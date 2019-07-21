@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.div`
     background: #333;
-    min-height: 300px;
+    min-height: 200px;
     display: flex;
     justify-content: center;
     color: #FFF;

@@ -1,6 +1,10 @@
 :root {
     --primary-color: #555;
-    --secondary-color: greenyellow;
+    --secondary-color: #20bd67;
     --primary-dark: #333;
     --primary-light: #FFF;
+
+    --primary-green: #20bd67;
+    --secondary-green: #199450;
+    --tertiary-green: #11703c;
 }

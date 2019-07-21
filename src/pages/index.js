@@ -118,7 +118,7 @@ export default function App({ data }) {
           <SecondaryPanelHeader>Who We Are</SecondaryPanelHeader>
           <PanelContent>
             <h4>
-At SK Solar Oz Pty Ltd we have been working with a world leading renewable energy contractor on
+At SK Solar Oz Pty Ltd we have been working with world leading renewable energy contractors on
 some of the largest solar farm projects in Australia.
             </h4>
             <VideoWrapper>
@@ -130,12 +130,19 @@ some of the largest solar farm projects in Australia.
       </SecondaryPanel>
       <PrimaryPanel>
         <StyledH1>What We Do</StyledH1>
-        <PanelContent>
+        <PanelContent light>
           <PanelImageLeft id={imageIds[0]} src={OurTeamImg} alt="our team" width="100%" />
           <StyledH4>
-We have for a number of years successfully delivered the
+For years we have successfully delivered the
 installation of various types of solar panel and clamping systems
           </StyledH4>
+          <div>
+            <p>Install harness / jumpers on tracker systems</p>
+            <p>Connection of solar panels and solar panel clips</p>
+            <p>Logistics & staging of solar panels from delivery to install</p>
+            <p>Scanning & log records off arrays and feeders</p>
+            <p>Mechanical installation of trackers / mibs / dampners</p>
+          </div>
         </PanelContent>
       </PrimaryPanel>
       <SecondaryPanel>
@@ -145,7 +152,6 @@ installation of various types of solar panel and clamping systems
           <PanelContent>
             <div>
               <SecondaryPanelHeader>Gannawarra - Victoria</SecondaryPanelHeader>
-              <p>Client: RCR Tomlinson</p>
               <p>System: Jinko Solar - 2000 x 10000 ATI single axis tracking system</p>
               <p>Panels installed: 110,000</p>
             </div>
@@ -159,7 +165,6 @@ installation of various types of solar panel and clamping systems
           <PanelImageLeft id={imageIds[2]} src={OurWorkQueensland} alt="our work in queensland" width="100%" />
           <div>
             <SecondaryPanelHeader>Townsville - Queensland</SecondaryPanelHeader>
-            <p>Client: RCR Tomlinson</p>
             <p>System: 8 panels high First Solar - 600 x 1200 fixed system</p>
             <p>Number of panels installed: 400,000</p>
           </div>
@@ -170,7 +175,6 @@ installation of various types of solar panel and clamping systems
           <PanelContent>
             <div>
               <SecondaryPanelHeader>Broken Hill - New South Wales</SecondaryPanelHeader>
-              <p>Client: RCR Tomlinson</p>
               <p>System: 4 panels high First Solar - 600 x 1200 fixed system</p>
               <p>Panels installed: 670,000</p>
               <p>Installation of connections, harness and jumpers: 750,000</p>

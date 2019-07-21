@@ -12,6 +12,7 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import MenuItem from '@material-ui/core/MenuItem';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
+import logo from '../images/logo.png';
 
 const StyledLink = styled(Link)`
     color: var(--primary-light);
@@ -23,11 +24,14 @@ const StyledAppBar = styled(MaterialAppBar)`
     background-color: var(--primary-color) !important;
 `;
 
-const AppNameContainer = styled.div`
+const AppNameContainer = styled.div` 
     min-width: 100%;
-
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     @media (min-width: 500px) {
         min-width: 50%;
+        justify-items: start;
     }
 `;
 
@@ -35,6 +39,10 @@ const AppBarButtonContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     width: 100%;
+`;
+
+const AppBarMenuButtonContainer = styled.div`
+    position: absolute;
 `;
 
 export default function AppBar({ routes }) {
@@ -89,20 +97,23 @@ export default function AppBar({ routes }) {
       <CssBaseline />
       <StyledAppBar>
         <Toolbar>
-          <Hidden mdUp>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={toggleMenu(true)}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Hidden>
           <AppNameContainer>
-            <Typography variant="h6">
+            {/* <Typography variant="h5">
               <StyledLink to="/">{data.site.siteMetadata.title}</StyledLink>
-            </Typography>
+            </Typography> */}
+            <StyledLink><img src={logo} alt="sk solar logo" height="100px" /></StyledLink>
           </AppNameContainer>
+          <AppBarMenuButtonContainer>
+            <Hidden mdUp>
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={toggleMenu(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Hidden>
+          </AppBarMenuButtonContainer>
           <AppBarButtonContainer>
             <Hidden smDown>
               {renderRouteButtons()}
