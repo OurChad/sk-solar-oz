@@ -15,7 +15,9 @@
   "dependencies": {
     "@material-ui/core": "^4.2.1",
     "@material-ui/icons": "^4.2.1",
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.13.23",
+    "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-remark": "^2.6.7",
     "lodash.debounce": "^4.0.8",
