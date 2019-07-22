@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import debounce from 'lodash.debounce';
 import styled from 'styled-components';
 import { Link, navigate, graphql, useStaticQuery } from 'gatsby';
 import MaterialAppBar from '@material-ui/core/AppBar';
@@ -35,6 +36,18 @@ const AppNameContainer = styled.div`
     }
 `;
 
+const LogoImg = styled.img`
+  height: 100px;
+  transition-duration: 0.5s;
+  transform: ${props => (props.animate ? 'translateY(8rem) scale3d(2, 2, 1)' : 'translateY(0px)')};
+  
+  @media (min-width: 500px) {
+    transform-origin: 120% 0% 0px;
+    transform: ${props => (props.animate ? 'translateY(5rem) translateX(50vw) scale3d(2, 2, 1)' : 'translateY(0px)')};
+  }
+`;
+
+
 const AppBarButtonContainer = styled.div`
     display: flex;
     justify-content: flex-end;
@@ -45,8 +58,19 @@ const AppBarMenuButtonContainer = styled.div`
     position: absolute;
 `;
 
-export default function AppBar({ routes }) {
+export default function AppBar({ routes, animateLogo }) {
   const [state, setState] = useState({ menuOpen: false });
+  const [logoAnimated, setLogoAnimated] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 40 && !logoAnimated) {
+      setLogoAnimated(true);
+    } else if (window.scrollY < 40 && logoAnimated) {
+      setLogoAnimated(false);
+    }
+  };
+  if (animateLogo) {
+    window.addEventListener('scroll', handleScroll);
+  }
 
   const toggleMenu = open => () => {
     setState({
@@ -101,7 +125,7 @@ export default function AppBar({ routes }) {
             {/* <Typography variant="h5">
               <StyledLink to="/">{data.site.siteMetadata.title}</StyledLink>
             </Typography> */}
-            <StyledLink><img src={logo} alt="sk solar logo" height="100px" /></StyledLink>
+            <StyledLink to="/"><LogoImg animate={animateLogo && !logoAnimated} src={logo} alt="sk solar logo" height="100px" /></StyledLink>
           </AppNameContainer>
           <AppBarMenuButtonContainer>
             <Hidden mdUp>

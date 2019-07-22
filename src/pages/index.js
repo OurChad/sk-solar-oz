@@ -18,7 +18,7 @@ const HomePage = styled.div`
 const StyledH1 = styled.h1`
     font-size: 3em;
     color: var(--primary-light);
-    margin-top: 5rem;
+    margin-top: 12rem;
 `;
 
 const StyledH4 = styled.h4`
@@ -108,7 +108,7 @@ export default function App({ data }) {
 
   return (
     <HomePage>
-      <AppBar routes={routes} />
+      <AppBar routes={routes} animateLogo />
       <MainPanel>
         <StyledH1>Solar Energy Contracting and Solutions</StyledH1>
         <StyledH4>Cutting-edge, focused & high quality contractors of Solar Farms.</StyledH4>
