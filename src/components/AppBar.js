@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import styled from 'styled-components';
@@ -61,16 +61,21 @@ const AppBarMenuButtonContainer = styled.div`
 export default function AppBar({ routes, animateLogo }) {
   const [state, setState] = useState({ menuOpen: false });
   const [logoAnimated, setLogoAnimated] = useState(false);
-  const handleScroll = () => {
-    if (window.scrollY > 40 && !logoAnimated) {
-      setLogoAnimated(true);
-    } else if (window.scrollY < 40 && logoAnimated) {
-      setLogoAnimated(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40 && !logoAnimated) {
+        setLogoAnimated(true);
+      } else if (window.scrollY < 40 && logoAnimated) {
+        setLogoAnimated(false);
+      }
+    };
+    if (animateLogo) {
+      window.addEventListener('scroll', handleScroll);
+
+      return () => window.removeEventListener('scroll', handleScroll);
     }
-  };
-  if (animateLogo) {
-    window.addEventListener('scroll', handleScroll);
-  }
+  }, [logoAnimated]);
 
   const toggleMenu = open => () => {
     setState({
