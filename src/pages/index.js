@@ -18,7 +18,11 @@ const HomePage = styled.div`
 const StyledH1 = styled.h1`
     font-size: 3em;
     color: var(--primary-light);
-    margin-top: 12rem;
+    margin-top: 18rem;
+
+    @media (min-width: 500px) {
+      margin-top: 16rem;
+    }
 `;
 
 const StyledH4 = styled.h4`
@@ -111,15 +115,15 @@ export default function App({ data }) {
       <AppBar routes={routes} animateLogo />
       <MainPanel>
         <StyledH1>Solar Energy Contracting and Solutions</StyledH1>
-        <StyledH4>Cutting-edge, focused & high quality contractors of Solar Farms.</StyledH4>
+        <StyledH4>Cutting-edge, focused & high quality contractors of Solar Farms</StyledH4>
       </MainPanel>
       <SecondaryPanel>
         <SecondaryPanelMain>
           <SecondaryPanelHeader>Who We Are</SecondaryPanelHeader>
           <PanelContent>
             <h4>
-At SK Solar Oz Pty Ltd we have been working with world leading renewable energy contractors on
-some of the largest solar farm projects in Australia.
+              At SK Solar Oz Pty Ltd we have been working with world leading renewable energy contractors on
+              some of the largest solar farm projects in Australia.
             </h4>
             <VideoWrapper>
               <iframe title="who-we-are-video" width="100%" height="100%" src="https://www.youtube.com/embed/nDeWhhXouQQ" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
@@ -133,8 +137,8 @@ some of the largest solar farm projects in Australia.
         <PanelContent light>
           <PanelImageLeft id={imageIds[0]} src={OurTeamImg} alt="our team" width="100%" />
           <StyledH4>
-For years we have successfully delivered the
-installation of various types of solar panel and clamping systems
+            For years we have successfully delivered the
+            installation of various types of solar panel and clamping systems
           </StyledH4>
           <div>
             <p>Install harness / jumpers on tracker systems</p>
@@ -187,8 +191,8 @@ installation of various types of solar panel and clamping systems
       <MainPanel>
         <StyledH1>Our Goal</StyledH1>
         <StyledH4>
-Renewable energy is a rapidly evolving industry and we have been a key part in the successful delivery of
-many solar farm projects thanks to our ever expanding base of multi talented skill labour.
+          Renewable energy is a rapidly evolving industry and we have been a key part in the successful delivery of
+          many solar farm projects thanks to our ever expanding base of multi talented skill labour.
         </StyledH4>
         <h4>We strive to see our clients succeed and to provide a cleaner, greener, and safer energy source to all of Australia.</h4>
       </MainPanel>

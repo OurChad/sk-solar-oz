@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
 import styled from 'styled-components';
 import { Link, navigate, graphql, useStaticQuery } from 'gatsby';
 import MaterialAppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -14,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 import logo from '../images/logo.png';
+import logoBody from '../images/logo-oz.png';
 
 const StyledLink = styled(Link)`
     color: var(--primary-light);
@@ -36,14 +34,18 @@ const AppNameContainer = styled.div`
     }
 `;
 
-const LogoImg = styled.img`
+const LogoImg = styled.div`
+  width: 100px;
   height: 100px;
   transition-duration: 0.5s;
-  transform: ${props => (props.animate ? 'translateY(8rem) scale3d(2, 2, 1)' : 'translateY(0px)')};
-  
+  transform: ${props => (props.animate ? 'translateY(12rem) scale3d(2.5, 2.5, 1)' : 'translateY(0px)')};
+  background-image: ${props => (props.animate ? `url(${logoBody})` : `url(${logo})`)};
+  background-color: transparent;
+  background-position: center;
+  background-size: 100px 100px;
   @media (min-width: 500px) {
     transform-origin: 120% 0% 0px;
-    transform: ${props => (props.animate ? 'translateY(5rem) translateX(50vw) scale3d(2, 2, 1)' : 'translateY(0px)')};
+    transform: ${props => (props.animate ? 'translateY(6rem) translateX(50vw) scale3d(2.5, 2.5, 1)' : 'translateY(0px)')};
   }
 `;
 
@@ -83,18 +85,6 @@ export default function AppBar({ routes, animateLogo }) {
     });
   };
 
-  const data = useStaticQuery(
-    graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `
-  );
-
   const renderRouteButtons = () => routes.map(route => (
     <Button
       key={route.title}
@@ -130,7 +120,7 @@ export default function AppBar({ routes, animateLogo }) {
             {/* <Typography variant="h5">
               <StyledLink to="/">{data.site.siteMetadata.title}</StyledLink>
             </Typography> */}
-            <StyledLink to="/"><LogoImg animate={animateLogo && !logoAnimated} src={logo} alt="sk solar logo" height="100px" /></StyledLink>
+            <StyledLink to="/"><LogoImg animate={animateLogo && !logoAnimated} src={logo} alt="sk solar logo" /></StyledLink>
           </AppNameContainer>
           <AppBarMenuButtonContainer>
             <Hidden mdUp>
