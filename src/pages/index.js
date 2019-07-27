@@ -18,20 +18,22 @@ const HomePage = styled.div`
 const StyledH1 = styled.h1`
     font-size: 3em;
     color: var(--primary-light);
-    margin-top: 18rem;
-
-    @media (min-width: 500px) {
-      margin-top: 16rem;
-    }
+    
 `;
 
 const StyledH4 = styled.h4`
     color: var(--secondary-color);
 `;
+
 const MainPanel = styled.div`
     text-align: center;
     margin-bottom: 3rem;
     color: var(--primary-light);
+    margin-top: 18rem;
+
+    @media (min-width: 500px) {
+      margin-top: 16rem;
+    }
 `;
 
 const PrimaryPanel = styled.div`

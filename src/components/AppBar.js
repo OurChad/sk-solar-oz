@@ -61,7 +61,7 @@ const AppBarMenuButtonContainer = styled.div`
 `;
 
 export default function AppBar({ routes, animateLogo }) {
-  const [state, setState] = useState({ menuOpen: false });
+  // const [state, setState] = useState({ menuOpen: false });
   const [logoAnimated, setLogoAnimated] = useState(false);
 
   useEffect(() => {
@@ -79,37 +79,37 @@ export default function AppBar({ routes, animateLogo }) {
     }
   }, [logoAnimated]);
 
-  const toggleMenu = open => () => {
-    setState({
-      menuOpen: open,
-    });
-  };
+  // const toggleMenu = open => () => {
+  //   setState({
+  //     menuOpen: open,
+  //   });
+  // };
 
-  const renderRouteButtons = () => routes.map(route => (
-    <Button
-      key={route.title}
-      onClick={() => {
-        toggleMenu(false)();
-        navigate(route.path);
-      }}
-      color="inherit"
-    >
-      {route.title}
-    </Button>
-  ));
+  // const renderRouteButtons = () => routes.map(route => (
+  //   <Button
+  //     key={route.title}
+  //     onClick={() => {
+  //       toggleMenu(false)();
+  //       navigate(route.path);
+  //     }}
+  //     color="inherit"
+  //   >
+  //     {route.title}
+  //   </Button>
+  // ));
 
-  const renderRouteMenuItems = () => routes.map((route, index) => (
-    <MenuItem
-      key={route.title}
-      tabIndex={index}
-      onClick={() => {
-        toggleMenu(false)();
-        navigate(route.path);
-      }}
-    >
-      {route.title}
-    </MenuItem>
-  ));
+  // const renderRouteMenuItems = () => routes.map((route, index) => (
+  //   <MenuItem
+  //     key={route.title}
+  //     tabIndex={index}
+  //     onClick={() => {
+  //       toggleMenu(false)();
+  //       navigate(route.path);
+  //     }}
+  //   >
+  //     {route.title}
+  //   </MenuItem>
+  // ));
 
   return (
     <React.Fragment>
@@ -122,7 +122,7 @@ export default function AppBar({ routes, animateLogo }) {
             </Typography> */}
             <StyledLink to="/"><LogoImg animate={animateLogo && !logoAnimated} src={logo} alt="sk solar logo" /></StyledLink>
           </AppNameContainer>
-          <AppBarMenuButtonContainer>
+          {/* <AppBarMenuButtonContainer>
             <Hidden mdUp>
               <IconButton
                 color="inherit"
@@ -137,16 +137,16 @@ export default function AppBar({ routes, animateLogo }) {
             <Hidden smDown>
               {renderRouteButtons()}
             </Hidden>
-          </AppBarButtonContainer>
+          </AppBarButtonContainer> */}
         </Toolbar>
       </StyledAppBar>
-      <SwipeableDrawer
+      {/* <SwipeableDrawer
         open={state.menuOpen}
         onClose={toggleMenu(false)}
         onOpen={toggleMenu(true)}
       >
         {renderRouteMenuItems()}
-      </SwipeableDrawer>
+      </SwipeableDrawer> */}
       <Toolbar />
     </React.Fragment>
   );
