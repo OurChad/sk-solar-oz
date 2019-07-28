@@ -11,7 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 import logo from '../images/logo.png';
-import logoBody from '../images/logo-oz.png';
+import logoBody from '../images/logo-transparent.svg';
 
 const StyledLink = styled(Link)`
     color: var(--primary-light);
@@ -28,7 +28,7 @@ const AppNameContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    @media (min-width: 500px) {
+    @media (min-width: 800px) {
         min-width: 50%;
         justify-items: start;
     }
@@ -43,7 +43,7 @@ const LogoImg = styled.div`
   background-color: transparent;
   background-position: center;
   background-size: 100px 100px;
-  @media (min-width: 500px) {
+  @media (min-width: 800px) {
     transform-origin: 120% 0% 0px;
     transform: ${props => (props.animate ? 'translateY(6rem) translateX(50vw) scale3d(2.5, 2.5, 1)' : 'translateY(0px)')};
   }
@@ -120,7 +120,7 @@ export default function AppBar({ routes, animateLogo }) {
             {/* <Typography variant="h5">
               <StyledLink to="/">{data.site.siteMetadata.title}</StyledLink>
             </Typography> */}
-            <StyledLink to="/"><LogoImg animate={animateLogo && !logoAnimated} src={logo} alt="sk solar logo" /></StyledLink>
+            <StyledLink to="/"><LogoImg animate={animateLogo && !logoAnimated} alt="sk solar logo" /></StyledLink>
           </AppNameContainer>
           {/* <AppBarMenuButtonContainer>
             <Hidden mdUp>

@@ -18,7 +18,7 @@ export default function Page({ children, routes }) {
 
   const Header = styled.div`
         grid-area: header;
-        @media (min-width: 500px) {
+        @media (min-width: 800px) {
             
         }
         grid-column: 1 / -1;
@@ -29,14 +29,14 @@ export default function Page({ children, routes }) {
         grid-column: 1 / -1;
         background: var(--secondary-color);
         
-        @media (min-width: 500px) {
+        @media (min-width: 800px) {
             grid-column: 3 / 11;
         }
     `;
 
   const FooterContainer = styled.div`
         grid-area: footer;
-        @media (min-width: 500px) {
+        @media (min-width: 800px) {
             
         }
         grid-column: 1 / -1;
