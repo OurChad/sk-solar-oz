@@ -7,6 +7,7 @@ import withReveal from 'react-reveal/withReveal';
 import { Mail, Call } from '@material-ui/icons';
 import AppBar from '../components/AppBar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import OurTeamImg from '../images/our-team.jpg';
 import OurWorkVictoria from '../images/our-work-victoria.jpg';
 import OurWorkNSW from '../images/our-work-new-south-wales.jpg';
@@ -132,6 +133,7 @@ export default function App({ data }) {
 
   return (
     <HomePage>
+      <SEO />
       <AppBar routes={routes} animateLogo />
       <MainPanel>
         <StyledH1>Solar Energy Contracting and Solutions</StyledH1>
