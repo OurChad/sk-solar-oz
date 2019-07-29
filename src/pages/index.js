@@ -196,7 +196,7 @@ export default function App({ data }) {
             <h4>We strive to see our clients succeed and to provide a cleaner, greener, and safer energy source to all of Australia.</h4>
           </div>
           <div>
-            <StyledH4>Contact Luke and Robert</StyledH4>
+            <StyledH4>Contact Luke and Robbie</StyledH4>
             <ContactDetailsContainer>
               <StyledCall />
               <h4>
@@ -218,7 +218,7 @@ export default function App({ data }) {
             <ContactDetailsContainer>
               <StyledMail />
               <h4>
-                robert@sksolaroz.com.au
+                robbie@sksolaroz.com.au
               </h4>
             </ContactDetailsContainer>
           </div>
